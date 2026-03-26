@@ -3,21 +3,21 @@ function Car(make, model) {
 	this. make = make;
 	this. model = model;
 }
-car.prototype.getMakeModel = function(){
-	return '&{this.make} ${this.model}';
-}
+Car.prototype.getMakeModel = function() {
+    return `${this.make} ${this.model}`;
+};
 
 function SportsCar(make, model, topSpeed) {
-	car.call(this, make, model);
-	this.topSpeed = topSpeed;
+    Car.call(this, make, model); // Call the Car constructor
+    this.topSpeed = topSpeed;
 }
 
-SportsCar.prototype = Object.create(Car.prototype);
+SportsCar.prototype = Object.create(Car.prototype); // Inherit from Car
 SportsCar.prototype.constructor = SportsCar;
 
-SportsCar.prototype.getTopSpessd = function (){
-	return this.topSpeed;
-}
+SportsCar.prototype.getTopSpeed = function() {
+    return this.topSpeed;
+};
 	
 }
 // Do not change the code below
